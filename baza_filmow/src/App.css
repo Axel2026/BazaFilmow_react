@@ -1,0 +1,326 @@
+html, body {
+    background-color: #333333;
+}
+
+.mainBackground {
+    background-color: #FFFFFF;
+    height: 100%;
+}
+
+#signUpBackground {
+    position: fixed;
+    width: 30%;
+    height: 55%;
+    background-color: #333333;
+    border-radius: 4%;
+    margin: 12% 50% 50% 50%;
+}
+
+#loginBackground {
+    position: fixed;
+    width: 28%;
+    height: 25%;
+    background-color: #333333;
+    border-radius: 20px;
+    margin: 18% 50% 50% 50%;
+    border-style: solid;
+    border-color: #fdfd96;
+    border-width: 4px;
+    padding: 30px;
+}
+
+#signForm {
+    position: absolute;
+    border-style: solid;
+    border-color: #fdfd96;
+    border-width: 4px;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+#logoSignUp {
+    background-color: #333333;
+}
+
+.bazaFilmowIcon {
+    float: left;
+    width: 18%;
+    height: 18%;
+    margin-left: 18%;
+    margin-top: 15%;
+}
+
+.formInput {
+    background-color: #333333;
+    color: #fdfd96;
+}
+
+#createAccountButton {
+    background-color: #fdfd96;
+    color: #333333;
+}
+
+#haveAccountButton {
+    background-color: #fdfd96;
+    color: #333333;
+}
+
+#goToSignUpButton {
+    background-color: #fdfd96;
+    color: #333333;
+}
+
+#loginButton {
+    background-color: #fdfd96;
+    color: #333333;
+}
+
+.formInput:focus {
+    box-shadow: 0 0 0 3px rgba(253, 253, 150, 0.6) !important;
+}
+
+#password1:focus {
+    box-shadow: 0 0 0 3px rgba(253, 253, 150, 0.6) !important;
+}
+
+#dateOfBirthLabel {
+    float: left;
+    color: white;
+    padding-left: 2%;
+}
+
+#birthdayInputs {
+    margin-left: 15%;
+}
+
+#dayOptions, #monthOptions, #yearOptions {
+    margin-left: 5%;
+}
+
+#backgroundMain {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+#carousel{
+    border-radius: 5px;
+    position: relative;
+    margin: 130px 25% 0 16.4%;
+    width: 1350px;
+    min-width: 500px;
+    height: 550px;
+    padding: 135px 25px 40px 25px;
+    background-color:rgba(253, 253, 150, 0.8);
+    box-shadow: 3px 3px 3px black;
+    clip-path: inset(-3px -3px -3px -3px);
+}
+
+#menuBar{
+    position: fixed;
+    margin-left: 1010px;
+    margin-top: -145px;
+    clip-path: polygon(25% 58%, 100% 58%, 100% 100%, 0 100%);
+    background-color: white;
+    width: 1065px;
+    height: 600px;
+    border-color: #fdfd96;
+    border-width: 30px;
+    box-shadow: 100px 50px 50px black;
+}
+
+.bazaFilmowIconGrayImage{
+    width: 300px;
+    position: fixed;
+    margin-top: 4%;
+    margin-left: 9%;
+}
+
+.carouselImage{
+    width: 15px;
+    height: 320px;
+    min-width: 10px;
+}
+
+#mostViewedDiv{
+    position: fixed;
+    font-size: 23px;
+    color: white;
+    z-index: 2;
+    margin-top: 23.2%;
+    margin-left:42%;
+}
+
+#mostViewed{
+    position: relative;
+    color: black;
+    margin: -90px 0px 40px -1000px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.movieIconImage{
+    position: fixed;
+    z-index: 2;
+    width: 50px;
+    margin-right: 3px;
+}
+
+.movieIcon{
+    /*width: 5%;*/
+    width: 110px;
+    position: fixed;
+    margin-top: -87px;
+    margin-left: 640px;
+}
+
+.searchIconImage{
+    width: 54px;
+    position: fixed;
+    margin-top: 410px;
+    margin-left: 180px;
+}
+
+#formInputMain {
+    width: 300px;
+    margin-top: 410px;
+    margin-left: -205px;
+    border-color: #fdfd96;
+    color: #333333;
+    box-shadow: 0 0 0 3px rgba(253, 253, 150, 1) !important;
+}
+
+.filterIcon{
+    width: 110px;
+    position: fixed;
+    margin-top: -83px;
+    margin-left: 840px;
+}
+
+.movieIcon:hover{
+    filter: invert(0.85);
+    cursor: pointer;
+}
+
+.filterIcon:hover{
+    filter: invert(0.85);
+    cursor: pointer;
+}
+
+#mainNavbar{
+    position: relative;
+    padding: 60px;
+    text-align: center;
+    height: 90px;
+    width: 100%;
+    background: #fdfd96;
+    color: white;
+    font-size: 30px;
+    box-shadow: 100px 3px 3px black;
+    z-index: 2;
+    opacity: 0.97;
+}
+
+#logoNavbar{
+    margin-top: -50px;
+    height: 460px;
+    width: 400px;
+    text-align: center;
+    background: #fdfd96;
+    color: white;
+    font-size: 30px;
+    box-shadow: 2px 3px 3px black;
+    clip-path: inset(0px 0px -3px 0px);
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.bazaFilmowIconNavbar{
+    margin-right: 5px;
+}
+
+.movieIconNavbar{
+    z-index: 1;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-top: -460px;
+    margin-left: 1400px;
+}
+
+.filterIconNavbar{
+    z-index: 0;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-top: -95px;
+    margin-left: 1200px;
+}
+
+.logoutIconNavbar{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: -95px;
+    margin-left: 1600px;
+}
+
+.movieIconNavbar:hover{
+    filter: invert(0.85);
+    cursor: pointer;
+}
+
+.filterIconNavbar:hover{
+    filter: invert(0.85);
+    cursor: pointer;
+}
+
+.logoutIconNavbar:hover{
+    filter: invert(0.85);
+    cursor: pointer;
+}
+
+#heroImage{
+    z-index: 0;
+    position: relative;
+    min-width: 63%;
+    height: 700px;
+    text-align: center;
+    margin: 0 20% 0 20%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(1, 0, 0, 0.5)), url("images/heroImage.jpg");
+    box-shadow: 3px 10px 3px black;
+    clip-path: inset(0 0 -3px 0);
+}
+
+.searchIconImageHero{
+    width: 54px;
+    position: absolute;
+    margin-top: 400px;
+    margin-left: 270px;
+}
+
+#formInputMainHero{
+    position: relative;
+    width: 320px;
+    margin-top: 400px;
+    margin-left: -205px;
+    border-color: #fdfd96;
+    color: white;
+    box-shadow: 0 0 0 3px rgba(253, 253, 150, 1) !important;
+}
+
+.searchIconImageHero:hover{
+    filter: invert(0.85);
+    cursor: pointer;
+}
+
+#mainPage{
+    position: relative;
+    background-image: url("images/NavbarBackground.png");
+    padding: 0 0 100px 0;
+    text-align: center;
+}
+
+
