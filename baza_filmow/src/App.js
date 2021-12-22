@@ -7,6 +7,8 @@ import {Switch, Route, Redirect} from "react-router-dom";
 import './App.css';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import Add from "./components/add";
+import Details from "./components/details";
 
 
 function App() {
@@ -25,9 +27,6 @@ function App() {
         <div className="mainBackground">
             <div>
                 <Route path="/" exact component={MainPage}/>
-                {/*<Route path="/profile" exact component={Profile}/>*/}
-
-
                 <Route exact path="/" render={() => (
                     $auth.isLoggedIn() ? (
                         <Redirect to="/"/>
@@ -40,6 +39,8 @@ function App() {
             <Switch>
                 <Route path="/login" exact component={Login}/>
                 <Route path="/signUp" exact component={SignUp}/>
+                <Route path="/add" exact component={Add}/>
+                <Route path="/details" exact component={Details}/>
             </Switch>
         </div>
     )
