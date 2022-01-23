@@ -24,7 +24,7 @@ export default function App() {
                 <Route path="/add"
                        render={() => {
                            if (isExpired(localStorage.getItem('token'))) {
-                               alert("You have to log in to access this site!")
+                               alert("Musisz się zalogować, aby mieć dostęp do tej strony!")
                                return <Redirect to="/" />;
                            }
                            return <Route path="/add" exact component={Add}/>;
@@ -32,7 +32,7 @@ export default function App() {
                 <Route path="/details"
                        render={() => {
                            if (isExpired(localStorage.getItem('token'))) {
-                               alert("You have to log in to access this site!")
+                               alert("Musisz się zalogować, aby mieć dostęp do tej strony!")
                                return <Redirect to="/" />;
                            }
                            return <Route path="/details" exact component={Details}/>;
