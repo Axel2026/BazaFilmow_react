@@ -3,7 +3,6 @@ import "../App.css"
 import {Button, ChakraProvider, Input, Textarea} from "@chakra-ui/react";
 import NavbarLogo from "./navbarLogo";
 import 'react-dropzone-uploader/dist/styles.css'
-import Dropzone from 'react-dropzone-uploader'
 
 const axios = require('axios');
 
@@ -11,7 +10,6 @@ const Add = () => {
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
-    //const [uploadedFile, setUploadedFile] = useState();
     const [uploadedFileUrl, setUploadedFileUrl] = useState("");
     const [movieAdded, setMovieAdded] = useState(false);
 
@@ -38,14 +36,6 @@ const Add = () => {
         }
     }
 
-/*    const getUploadParams = ({meta}) => {
-        return {url: 'https://httpbin.org/post'}
-    }
-
-    const handleSubmit = (files) => {
-        setUploadedFile(files[0].meta.previewUrl)
-    }*/
-
     return (
         <div id="add">
             <ChakraProvider>
@@ -53,22 +43,16 @@ const Add = () => {
                 {uploadedFileUrl === "" ? (
                     <div></div>
                 ) : (
-                    <div className="addImagePreview"><img className="addImagePreviewI" src={uploadedFileUrl}/></div>
+                    <div className="addImagePreview"><img alt="Movie preview" className="addImagePreviewI" src={uploadedFileUrl}/></div>
                 )}
                 <div className="addForm">
                     <div className="pageTitleAdd">Dodaj film:</div>
-                    <Input id="formInputAddTitle" placeholder="Tytuł..." size="lg" value={title}
+                    <Input className="formInput" placeholder="Tytuł..." size="lg" width="350px" value={title}
                            onChange={event => setTitle(event.target.value)}/><br/><br/>
-                    <Input id="formInputAddUrl" placeholder="URL obrazu..." size="lg" value={uploadedFileUrl}
+                    <Input className="formInput" placeholder="URL obrazu..." size="lg" width="350px" value={uploadedFileUrl}
                            onChange={event => setUploadedFileUrl(event.target.value)}/><br/><br/>
                     <Textarea id="formInputAddDesc" placeholder="Opis..." size="lg"
                               onChange={event => setDescription(event.target.value)} value={description}/><br/><br/>
-{/*                    <Dropzone
-                        getUploadParams={getUploadParams}
-                        onSubmit={handleSubmit}
-                        accept="image/*"
-                        maxFiles='1'
-                    />*/}
                     <Button type="submit" id="addButton" onClick={addMovie}>Dodaj</Button>
                     {
                         movieAdded ? (<div id="sentSuccessfully">Film dodany pomyślnie!</div>) : (<div id="sentSuccessfully"></div>)

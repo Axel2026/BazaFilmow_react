@@ -45,9 +45,10 @@ const HeroImage = () => {
                     } else if (movie.title !== undefined) {
                         if(movie.title.toLowerCase().includes(query.toLowerCase())) return movie;
                     }
-                }).map((movie, index) =>
+                    return 0;
+                }).map((movie) =>
                     <div className="searchBarItem" key={movie.id} onClick={() => gotoMoviePage(movie.id)}>
-                        <div className="searchBarItemImage"><img src={movie.image}/></div>
+                        <div className="searchBarItemImage"><img src={movie.image} alt="Movie preview"/></div>
                         <p className="searchBarItemTitle">{checkString(movie.title, 35)}</p>
                     </div>
                 )}

@@ -6,7 +6,7 @@ const MovieImage = (props) => {
 
     return (
         <div className='movieImageDetailsContainer'>
-            <img className='movieImageDetails' src={props.imageSrc}/>
+            <img className='movieImageDetails' src={props.imageSrc} alt="Movie Poster"/>
         </div>
     )
 };

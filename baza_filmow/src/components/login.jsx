@@ -6,7 +6,7 @@ import bazaFilmowIcon from "../images/bazaFilmowIconName.png";
 
 const axios = require('axios');
 
-const Login = (props) => {
+const Login = () => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
@@ -38,15 +38,15 @@ const Login = (props) => {
             localStorage.setItem('token', response.data.token);
             HandleChangeRoute();
         }).catch((error) => {
+            if (login.trim() === '') {
+                alert("Login jest wymagany!")
+            } else if (password.trim() === '') {
+                alert("Hasło jest wymagany!")
+            }else{
+                alert("Podane dane są nieprawidłowe!")
+            }
             console.log(error);
         });
-
-        if (login.trim() === '') {
-            alert("Login is required!")
-        } else if (password.trim() === '') {
-            alert("Password is required!")
-        }
-
     };
 
     const HandleChangeLogin = (event) => {
@@ -65,15 +65,17 @@ const Login = (props) => {
             <div id="loginBackground">
                 <form onSubmit={Validate}>
                     <ChakraProvider>
-                        <Input id="loginInput" placeholder="Login" size="lg" onChange={HandleChangeLogin}/><br/><br/>
+                        <Input className="formInput" placeholder="Login" size="lg" onChange={HandleChangeLogin}/><br/><br/>
                         <InputGroup size="md">
                             <Input
+                                className="formInput"
                                 pr="4.5rem"
+                                size="lg"
                                 type={show ? "text" : "password"}
                                 placeholder="Enter password"
                                 onChange={HandleChangePass}
                             />
-                            <InputRightElement width="4.5rem">
+                            <InputRightElement width="5rem" height="3rem">
                                 <Button h="1.75rem" size="sm" color="black" onClick={handleClick}>
                                     {show ? "Hide" : "Show"}
                                 </Button>

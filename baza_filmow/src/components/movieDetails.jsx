@@ -2,7 +2,6 @@ import React from 'react';
 import "../App.css"
 
 const MovieDetails = (props) => {
-    console.log(props.title)
 
     return (
         <div>
