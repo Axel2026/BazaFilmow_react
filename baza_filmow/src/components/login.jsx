@@ -8,7 +8,7 @@ const axios = require('axios');
 
 const Login = (props) => {
 
-    const [email, setEmail] = useState('')
+    const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [show, setShow] = useState(false)
 
@@ -21,6 +21,7 @@ const Login = (props) => {
 
     const SignUpButton = () => {
         history.push('/signUp');
+        window.location.reload();
     };
 
 
@@ -28,30 +29,28 @@ const Login = (props) => {
         event.preventDefault();
         axios({
             method: 'post',
-            url: 'http://localhost:3001/api/user/auth',
+            url: 'https://pr-movies.herokuapp.com/api/user/auth',
             data: {
-                email: email,
+                login: login,
                 password: password
             }
         }).then((response) => {
-            //props.dispatch({type: "SAVE_USER_NICKNAME", payload: response.data.user.nickname})
-            //localStorage.setItem('token', response.data.token.token);
+            localStorage.setItem('token', response.data.token);
             HandleChangeRoute();
         }).catch((error) => {
             console.log(error);
         });
 
-        if (email.trim() === '') {
-            alert("Email is required!")
+        if (login.trim() === '') {
+            alert("Login is required!")
         } else if (password.trim() === '') {
             alert("Password is required!")
         }
 
     };
 
-
-    const HandleChangeEmail = (event) => {
-        setEmail(event.currentTarget.value);
+    const HandleChangeLogin = (event) => {
+        setLogin(event.currentTarget.value);
     };
 
     const HandleChangePass = (event) => {
@@ -66,7 +65,7 @@ const Login = (props) => {
             <div id="loginBackground">
                 <form onSubmit={Validate}>
                     <ChakraProvider>
-                        <Input id="loginInput" placeholder="Email" size="lg" onChange={HandleChangeEmail}/><br/><br/>
+                        <Input id="loginInput" placeholder="Login" size="lg" onChange={HandleChangeLogin}/><br/><br/>
                         <InputGroup size="md">
                             <Input
                                 pr="4.5rem"

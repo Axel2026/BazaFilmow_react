@@ -8,14 +8,14 @@ const SignUp = () => {
 
     const [nickname, setNickname] = useState('')
     const [email, setEmail] = useState('')
-    const [name, setName] = useState('')
-    const [surname, setSurname] = useState('')
+/*    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')*/
     const [password, setPassword] = useState('')
     const [show, setShow] = useState(false)
-    const [birthdayDay, setBirthdayDay] = useState('01')
+/*    const [birthdayDay, setBirthdayDay] = useState('01')
     const [birthdayMonth, setBirthdayMonth] = useState('01')
     const [birthdayYear, setBirthdayYear] = useState('1988')
-    const [birthday, setBirthday] = useState('01-01-1988')
+    const [birthday, setBirthday] = useState('01-01-1988')*/
 
     const handleClick = () => setShow(!show)
     const history = useHistory();
@@ -26,34 +26,32 @@ const SignUp = () => {
     };
 
     const HandleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         if (Check()) {
             axios({
                 method: 'post',
-                url: 'http://localhost:3001/api/user/create',
+                url: 'https://pr-movies.herokuapp.com/api/user/create',
                 data: {
-                    nickname: nickname,
+                    name: nickname,
                     email: email,
-                    name: name,
-                    surname: surname,
                     password: password,
-                    birthday: birthday,
                 }
             }).then((response) => {
-                HandleChangeRoute();
+                console.log(response.data)
+                HandleChangeRoute()
             }).catch((error) => {
                 alert("Podany email lub login są już używane!")
                 console.log(error);
-            });
+            })
         }
-        ;
-    };
+    }
 
 
     const Check = () => {
-        if ((document.getElementById('password1').value === document.getElementById('password2').value) && (document.getElementById('password1').value !== '')) {
-            let date = birthdayDay + "-" + birthdayMonth + "-" + birthdayYear;
-            setBirthday(date);
+        if ((document.getElementById('password1').value === document.getElementById('password2').value)
+            && (document.getElementById('password1').value.trim() !== '')) {
+            //let date = birthdayDay + "-" + birthdayMonth + "-" + birthdayYear;
+            //setBirthday(date);
             return true;
         } else {
             document.getElementById('password1').style.borderColor = '#FF0000';
@@ -73,10 +71,10 @@ const SignUp = () => {
                         <ChakraProvider>
                             <Input className="formInput" placeholder="Nickname" size="lg"
                                    onChange={e => setNickname(e.target.value)}/><br/><br/>
-                            <Input className="formInput" placeholder="First Name" size="lg"
+{/*                            <Input className="formInput" placeholder="First Name" size="lg"
                                    onChange={e => setName(e.target.value)}/><br/><br/>
                             <Input className="formInput" placeholder="Surname" size="lg"
-                                   onChange={e => setSurname(e.target.value)}/><br/><br/>
+                                   onChange={e => setSurname(e.target.value)}/><br/><br/>*/}
                             <Input className="formInput" placeholder="Email" size="lg"
                                    onChange={e => setEmail(e.currentTarget.value)}/><br/><br/>
                             <InputGroup className="formInput" size="md">
@@ -98,7 +96,7 @@ const SignUp = () => {
                                    placeholder="Repeat password"
                             /><br/><br/>
 
-                            <label to="birthdayInputs" id="dateOfBirthLabel">Date of birth:    </label>
+                            {/*<label to="birthdayInputs" id="dateOfBirthLabel">Date of birth:    </label>
                             <div id="birthdayInputs">
                                 <select className="formInput" id="dayOptions" variant="outline"
                                         onChange={e => setBirthdayDay(e.target.value)} defaultValue="Day">
@@ -179,7 +177,7 @@ const SignUp = () => {
                                     <option value="2010">2010</option>
                                 </select>
                             </div>
-                            <br/>
+                            <br/>*/}
                             <Button id="createAccountButton" type="submit">Create an
                                 account!</Button>&nbsp;&nbsp;
                             <Button id="haveAccountButton" onClick={HandleChangeRoute}>Already have an account? Log

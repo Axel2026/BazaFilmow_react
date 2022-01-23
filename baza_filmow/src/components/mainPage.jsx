@@ -6,11 +6,10 @@ import Carousel from "./carousel";
 import NavbarLogo from "./navbarLogo";
 import HeroImage from "./heroImage";
 const MainPage = () => {
-
     return (
         <div id="mainPage">
             <ChakraProvider>
-                <NavbarLogo/>
+                <NavbarLogo main={true}/>
                 <HeroImage/>
                 <Carousel/>
             </ChakraProvider>
