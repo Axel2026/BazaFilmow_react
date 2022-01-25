@@ -41,7 +41,7 @@ const Login = () => {
             if (login.trim() === '') {
                 alert("Login jest wymagany!")
             } else if (password.trim() === '') {
-                alert("Hasło jest wymagany!")
+                alert("Hasło jest wymagane!")
             }else{
                 alert("Podane dane są nieprawidłowe!")
             }
@@ -91,8 +91,4 @@ const Login = () => {
     )
 };
 
-
-/*const mapStateToProps = state => ({
-    userNickname: state.userNickname
-});*/
 export default Login;

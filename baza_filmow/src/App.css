@@ -440,7 +440,8 @@ html, body {
 
 #mainPage{
     position: relative;
-    background-image: url("images/NavbarBackground.png");
+    /*background-image: url("images/NavbarBackground.png");*/
+    background-color: #333333;
     padding: 0 0 100px 0;
     text-align: center;
 }
@@ -473,6 +474,68 @@ html, body {
     width: 100px;
     height: 50px;
     background-color: #fdfd96;
+}
+
+#movie-list-container{
+    width: 82%;
+    margin: 150px auto auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.movie-list-image {
+    display: block;
+    width: 200px;
+    height: 290px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fdfd96;
+    overflow: hidden;
+    width: 200px;
+    height: 0;
+    transition: .5s ease;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+.movie-list-item:hover .overlay{
+    height: 100%;
+    cursor: pointer;
+}
+
+.movie-list-item{
+    position: relative;
+    width: 200px;
+    margin: 10px;
+}
+
+.movie-item-text-desc{
+    color: black;
+    font-size: 15px;
+    position: absolute;
+    top: 40%;
+}
+
+.movie-item-text-title{
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    -webkit-transform: translate(-48%, -48%);
+    -ms-transform: translate(-48%, -48%);
+    transform: translate(-48%, -48%);
+    text-align: center;
 }
 
 .addImagePreviewI{

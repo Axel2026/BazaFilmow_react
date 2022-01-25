@@ -2,16 +2,16 @@ import React from 'react';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import {ChakraProvider} from "@chakra-ui/react";
-import Carousel from "./carousel";
 import NavbarLogo from "./navbarLogo";
 import HeroImage from "./heroImage";
+import MovieList from "./movieList";
 const MainPage = () => {
     return (
         <div id="mainPage">
             <ChakraProvider>
                 <NavbarLogo main={true}/>
                 <HeroImage/>
-                <Carousel/>
+                <MovieList/>
             </ChakraProvider>
         </div>
     )

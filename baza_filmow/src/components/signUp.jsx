@@ -44,12 +44,25 @@ const SignUp = () => {
     const Check = () => {
         if ((document.getElementById('password1').value === document.getElementById('password2').value)
             && (document.getElementById('password1').value.trim() !== '')) {
-            //let date = birthdayDay + "-" + birthdayMonth + "-" + birthdayYear;
-            //setBirthday(date);
-            return true;
+            document.getElementById('password1').style.borderColor = '';
+            document.getElementById('password2').style.borderColor = '';
+            if (document.getElementById('nickname').value.trim() !== '') {
+                document.getElementById('nickname').style.borderColor = '';
+                if (document.getElementById('email').value.trim() !== '') {
+                    document.getElementById('email').style.borderColor = '';
+                    return true;
+                } else {
+                    document.getElementById('email').style.borderColor = '#FF0000';
+                    return false;
+                }
+            } else {
+                document.getElementById('nickname').style.borderColor = '#FF0000';
+                return false;
+            }
         } else {
             document.getElementById('password1').style.borderColor = '#FF0000';
             document.getElementById('password2').style.borderColor = '#FF0000';
+            console.log(document.getElementById('password1').style.borderColor)
             return false;
         }
     };
@@ -63,12 +76,13 @@ const SignUp = () => {
                 <div id="signForm">
                     <form id="formSign" onSubmit={HandleSubmit}>
                         <ChakraProvider>
-                            <Input className="formInput" placeholder="Nickname" size="lg"
+                            <Input className="formInput" placeholder="Nickname" id="nickname" size="lg"
                                    onChange={e => setNickname(e.target.value)}/><br/><br/>
-                            <Input className="formInput" placeholder="Email" size="lg"
+                            <Input className="formInput" placeholder="Email" id="email" size="lg"
                                    onChange={e => setEmail(e.currentTarget.value)}/><br/><br/>
-                            <InputGroup className="formInput" size="md">
+                            <InputGroup size="md">
                                 <Input id="password1"
+                                       className="formInput"
                                        pr="4.5rem"
                                        size="lg"
                                        type={show ? "text" : "password"}
@@ -81,7 +95,8 @@ const SignUp = () => {
                                     </Button>
                                 </InputRightElement>
                             </InputGroup>
-                            <Input className="formInput" id="password2"
+                            <Input className="formInput"
+                                   id="password2"
                                    pr="4.5rem"
                                    size="lg"
                                    type={show ? "text" : "password"}
