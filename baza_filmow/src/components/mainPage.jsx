@@ -5,6 +5,7 @@ import {ChakraProvider} from "@chakra-ui/react";
 import NavbarLogo from "./navbarLogo";
 import HeroImage from "./heroImage";
 import MovieList from "./movieList";
+import Footer from "./footer";
 const MainPage = () => {
     return (
         <div id="mainPage">
@@ -12,6 +13,7 @@ const MainPage = () => {
                 <NavbarLogo main={true}/>
                 <HeroImage/>
                 <MovieList/>
+                <Footer/>
             </ChakraProvider>
         </div>
     )

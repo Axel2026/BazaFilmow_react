@@ -83,7 +83,7 @@ const Login = () => {
                         </InputGroup>
                         <br/>
                         <Button id="loginButton" type="submit">Log in</Button>&nbsp;&nbsp;
-                        <Button id="goToSignUpButton" onClick={SignUpButton}>Sign up</Button>
+                        <Button id="goToSignUpButton" onClick={SignUpButton}>Don't have an account? Sign up!</Button>
                     </ChakraProvider>
                 </form>
             </div>

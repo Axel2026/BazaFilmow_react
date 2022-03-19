@@ -4,12 +4,13 @@ import NavbarLogo from "./navbarLogo";
 import {ChakraProvider} from "@chakra-ui/react";
 import MovieImage from "./movieImage";
 import MovieDetails from "./movieDetails";
+import {useParams} from "react-router-dom";
 
 const axios = require('axios');
-const Details = (props) => {
+const Details = () => {
 
     const [movie, setMovie] = useState([])
-    const movieId = props.location.state.movieId;
+    const movieId = useParams().id
 
     useEffect(() => {
         getMovieFromServer()
@@ -38,7 +39,7 @@ const Details = (props) => {
     } else {
         return (
             <div>
-                <div>Loading...</div>
+                <div style={{background: "#333333", color: "white"}}>Loading...</div>
             </div>
         )
     }

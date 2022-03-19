@@ -35,7 +35,7 @@ export default function App() {
                                alert("Musisz się zalogować, aby mieć dostęp do tej strony!")
                                return <Redirect to="/" />;
                            }
-                           return <Route path="/details" exact component={Details}/>;
+                           return <Route path="/details/:id" exact component={Details}/>;
                        }}/>
             </Switch>
         </div>

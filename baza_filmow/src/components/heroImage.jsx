@@ -27,7 +27,7 @@ const HeroImage = () => {
     const history = useHistory();
 
     function gotoMoviePage(movieId) {
-        history.push('/details', {movieId: movieId})
+        history.push(`/details/${movieId}`)
     }
 
     function checkString(str, length) {

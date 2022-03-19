@@ -103,7 +103,7 @@ const SignUp = () => {
                                    placeholder="Repeat password"
                             /><br/><br/>
                             <Button id="createAccountButton" type="submit">Create an
-                                account!</Button>&nbsp;&nbsp;
+                                account</Button>&nbsp;&nbsp;
                             <Button id="haveAccountButton" onClick={HandleChangeRoute}>Already have an account? Log
                                 In!</Button>
                         </ChakraProvider>

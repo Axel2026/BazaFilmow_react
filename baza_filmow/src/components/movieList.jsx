@@ -1,4 +1,3 @@
-import OwlCarousel from "react-owl-carousel";
 import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 
@@ -14,7 +13,7 @@ const MovieList = () => {
 
     const history = useHistory();
     function gotoMoviePage(movieId) {
-        history.push('/details', {movieId: movieId})
+        history.push(`/details/${movieId}`)
     }
 
     function getMoviesFromServer() {
@@ -47,7 +46,7 @@ const MovieList = () => {
         )
     }else{
         return(
-            <div>Loading...</div>
+            <div style={{background: "#333333", color: "white", marginTop: "50px"}}>Loading...</div>
         )
     }
 
